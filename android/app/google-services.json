@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "884596857796",
+    "project_id": "signup-in-firebase-bbc6d",
+    "storage_bucket": "signup-in-firebase-bbc6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884596857796:android:b99599a11a65ee8fa36291",
+        "android_client_info": {
+          "package_name": "com.example.signin_up_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884596857796-v6o3h9p0u0ptaupfjf6iu3u3qtfckbrl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHCZ4jmdHXclcSMTLFlkSL_Wbm7aiKYnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884596857796-v6o3h9p0u0ptaupfjf6iu3u3qtfckbrl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
