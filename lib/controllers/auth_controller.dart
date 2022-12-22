@@ -15,7 +15,7 @@ class AuthController extends GetxController {
           .then((respone) {
         if (respone.credential.hashCode != 0) {
           debugPrint(
-              '--------------- ${respone.credential.hashCode.toString()}');
+              '------------------ hashcode - ${respone.credential.hashCode.toString()}');
           Get.snackbar('Sucessfully!', 'You sign up sucessfully');
           Get.offAll(() => const LoginPage());
         }
