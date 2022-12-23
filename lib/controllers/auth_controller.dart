@@ -13,16 +13,17 @@ class AuthController extends GetxController {
       await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email!, password: password!)
           .then((respone) {
-        if (respone.credential.hashCode != 0) {
+        if (respone.credential.hashCode == 2011) {
           debugPrint(
               '------------------ hashcode - ${respone.credential.hashCode.toString()}');
-          Get.snackbar('Sucessfully!', 'You sign up sucessfully');
+          Get.snackbar('Sucessfully!', 'You sign up sucessfully',
+              colorText: Colors.white, backgroundColor: Colors.green);
           Get.offAll(() => const LoginPage());
         }
       });
     } catch (message) {
       Get.snackbar('Error', message.toString(),
-          colorText: Colors.white, backgroundColor: Colors.green);
+          colorText: Colors.white, backgroundColor: Colors.red);
     }
     isRegisterloading(false);
   }
