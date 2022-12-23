@@ -2,9 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:signin_up_firebase/pages/sign_up_page.dart';
 
-class LoginPage extends StatelessWidget {
+import '../controllers/auth_controller.dart';
+
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController passwordcontroller = TextEditingController();
+  final authCon = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -61,6 +71,7 @@ class LoginPage extends StatelessWidget {
                           )
                         ]),
                     child: TextField(
+                      controller: emailcontroller,
                       decoration: InputDecoration(
                           prefixIcon: const Icon(
                             Icons.mail,
@@ -101,6 +112,7 @@ class LoginPage extends StatelessWidget {
                           )
                         ]),
                     child: TextField(
+                      controller: passwordcontroller,
                       decoration: InputDecoration(
                           prefixIcon: const Icon(
                             Icons.password_rounded,
@@ -150,7 +162,12 @@ class LoginPage extends StatelessWidget {
               height: 70,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                authCon.signInUser(
+                  email: emailcontroller.text,
+                  password: passwordcontroller.text,
+                );
+              },
               child: Container(
                 width: width * 0.5,
                 height: height * 0.06,
