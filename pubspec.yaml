@@ -43,6 +43,7 @@ dependencies:
   loading_animation_widget: ^1.2.0+4
   lottie: ^2.1.0
   get: ^4.6.5
+  flutter_svg: ^1.1.6
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -69,6 +70,8 @@ flutter:
   assets:
     - assets/images/
     - assets/lottie/
+    - assets/icon/
+    - assets/svg/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:signin_up_firebase/pages/welcome_pages.dart';
+import 'package:signin_up_firebase/main.dart';
 
 import '../pages/login_page.dart';
 
@@ -43,7 +43,7 @@ class AuthController extends GetxController {
             colorText: Colors.white,
             backgroundColor: Colors.green,
           );
-          Get.offAll(() => const WelcomePage());
+          Get.offAll(() => const RootPage());
         }
       });
     } catch (message) {
@@ -58,12 +58,11 @@ class AuthController extends GetxController {
     if (FirebaseAuth.instance.currentUser?.uid == null) {
       Get.offAll(() => const LoginPage());
     } else {
-      Get.offAll(() => const WelcomePage());
+      Get.offAll(() => const RootPage());
     }
   }
 
   //Signout
-
   signOutUser() async {
     final auth = FirebaseAuth.instance;
     await auth.signOut().then(
